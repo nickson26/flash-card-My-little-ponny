@@ -1,0 +1,118 @@
+:root {
+    --card-front-color: #e0a3b0; /* Rosa mais escuro */
+    --text-color: #4a0059; /* Roxo escuro */
+    --tema-color: #0288d1; /* Azul escuro */
+    --card-back-color: #dbc775; /* Amarelo dourado */
+    --border-color: #ff5789; /* Rosa vibrante */
+    --highlight-color: #d16e96; /* Rosa médio escuro */
+}
+
+
+body {
+    background: url(img/bg-desktop.webp);
+    background-size: 2028px 1529px;
+    background-repeat: no-repeat;
+    background-position: center; 
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    color: var(--highlight-color);
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    text-shadow: 0px 0px 15px rgba(255, 192, 203, 0.7); /* Brilho rosa */
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 4rem;
+    gap: 2rem;
+}
+
+.cartao {
+    margin: 1rem;
+    height: 18rem;
+    flex-basis: calc(30% - 4rem);
+    perspective: 1000px;
+}
+
+.cartao__conteudo {
+    background-color: var(--card-front-color);
+    border: 2px solid var(--border-color);
+    text-align: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.cartao__conteudo h3 {
+    color: var(--tema-color);
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco */
+    border: 1px solid var(--highlight-color);
+    text-align: left;
+    padding: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    backface-visibility: hidden;
+    font-weight: 900;
+    text-shadow: 0px 0px 5px rgba(103, 58, 183, 0.5); /* Sombra roxa */
+}
+
+.cartao.active .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.cartao__conteudo__pergunta {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0px 0px 8px rgba(106, 27, 154, 0.5); /* Efeito de brilho  */
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+    background-color: var(--card-back-color);
+    border: 2px solid var(--tema-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-shadow: 0px 0px 8px rgba(255, 138, 128, 0.5); 
+}
+
+footer {
+    background-color: #6a1b9a; /* Roxo escuro */
+    color: #ffd1dc; /* Rosa claro */
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    font-size: 1em;
+    box-shadow: 0 -2px 10px rgba(98, 0, 234, 0.6);
+}
